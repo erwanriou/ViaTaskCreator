@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <!-- Responsive viewport -->
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
-    <title></title>
+    <title>Task Creator | VIAMUNDUS</title>
     <!-- Fav Icon -->
-    <link rel="icon" href="./#.ico" type="image/x-icon">
+    <link rel="icon" href="./resources/images/fav.png" type="image/x-icon">
     <!-- CSS Scripts -->
     <link href="./resources/css/reset.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.css">
@@ -15,31 +15,41 @@
   </head>
   <body>
   <!-- Header -->
-    <h1>Todo List</h1>
-    <div>
-      <button onclick="handlers.toggleAll()">Toggle All</button>
+    <header>
+      <div class="container">
+        <div class="row">
+          <img src="./resources/images/Logo.png" alt="Viamundus Logo">
+        </div>
+        <div class="row">
+          <button class="headerButton"onclick="handlers.toggleAll()">Check All</button>
+          <button class="headerButton"onclick="handlers.changeTodo()">Edit</button>
+          <input class="headerInput"id="changeTodoPositionInput" type="number">
+          <input class="headerInput"id="changeTodoTextInput" type="text">
+          <button class="headerButton"onclick="handlers.toggleCompleted()">Select</button>
+          <input class="headerInput"id="toggleCompletedPositionInput" type="number">
+        </div>
+      </div>
+    </header>
+    <div class="banner">
+      <div class="background-image1">
+        <div class="container">
+          <p>Create your own task manager with VIA</p>
+          <div class="column">
+            <input id="addTodoTextInput" type="text" value="">
+          </div>
+          <div class="column">
+            <button onclick="handlers.addTodo()" class="taskGenerator">Create Task</button>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <div>
-      <button onclick="handlers.addTodo()">Add</button>
-      <input id="addTodoTextInput" type="text">
-    </div>
-
-    <div>
-      <button onclick="handlers.changeTodo()">Change Todo</button>
-      <input id="changeTodoPositionInput" type="number">
-      <input id="changeTodoTextInput" type="text">
-    </div>
-
-    <div>
-      <button onclick="handlers.toggleCompleted()">Toggle Completed</button>
-      <input id="toggleCompletedPositionInput" type="number">
-    </div>
-
-    <ul>
-    </ul>
   <!-- Content -->
-
+  <div class="container">
+    <div class="list">
+      <ul>
+      </ul>
+    </div>
+  </div>
   <!-- Footer -->
 
   <!-- Scripts -->

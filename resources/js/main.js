@@ -75,12 +75,13 @@ var view = {
 
     todoList.todos.forEach(function(todo, position)  {
       var todoLi = document.createElement('li');
-      var todoTextWithCompletion = '';
+      var todoTextWithCompletion = " ";
 
       if (todo.completed === true) {
-        todoTextWithCompletion = '(x) ' + todo.todoText;
+        todoTextWithCompletion = '';
+        todoTextWithCompletion = 'completed Task';
       } else {
-        todoTextWithCompletion = '( ) ' + todo.todoText;
+        todoTextWithCompletion = ' ' + todo.todoText;
       }
 
       todoLi.id = position;
@@ -91,7 +92,7 @@ var view = {
   },
   createDeleteButton: function() {
     var deleteButton = document.createElement("button");
-    deleteButton.textContent = "Delete";
+    deleteButton.textContent = "x";
     deleteButton.className = "deleteButton";
     return deleteButton;
   },
